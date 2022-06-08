@@ -14,8 +14,11 @@
     background-image: url("../img/KnowYourMusicText_01_HomePage.png");
     background-size: cover;
     background-position: center;
+/* <<<<<<< feature/rightSideOfHomePage */
 }
 
 .stand-out{
     color: red;
+=======
+/* >>>>>>> main */
 }
