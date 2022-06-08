@@ -2,7 +2,7 @@
     height: 800px;
     width: 100%;
     margin-bottom: 25px;
-    background-image: url("../img/KnowYourMusicLines_onWhite_01_HomePage.png");
+    background-image: url("../img/KYM_linesWhiteV2.svg");
     background-size: cover;
     background-position: center;
 }
@@ -11,7 +11,7 @@
     height: 800px;
     width: 100%;
     margin-bottom: 25px;
-    background-image: url("../img/KnowYourMusicText_01_HomePage.png");
+    background-image: url("../img/KYM_text.svg");
     background-size: cover;
     background-position: center;
 }
