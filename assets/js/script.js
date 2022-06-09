@@ -1,4 +1,4 @@
-const searchInput = document.getElementById("form1");
+const searchInput = document.getElementById("textInput");
 
 searchInput.addEventListener("change", requestAuthorization);
 
