@@ -5,26 +5,43 @@
     color: #294c5e;
     
 }
-.hero {
-    height: 800px;
-    width: 100%;
-    margin-bottom: 25px;
+body {
     background-image: url("../img/KYM_text.svg"),url("../img/KYM_linesWhiteV2.svg");
-    /* background-image: url("../img/KYM_linesWhiteV2.svg"); */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-color: #fef8fd;
+    background-repeat: no-repeat;
 }
-
-/* .heros {
-    height: 800px;
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../img/KYM_text.svg");
-    background-size: cover;
-    background-position: center;
-} */
 
 .stand-out{
     color: #db5844;
 }
+
+h5, h1 {
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+.input {
+    position: absolute;
+    right: 20%;
+    top: 25%;
+}
+
+.textArea {
+    width: 100%;
+    opacity: 0.50;
+    color: white;
+    background-color: #294c5e;
+    padding-left: 20px;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    height: 35px;
+    text-transform: uppercase;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+  }
