@@ -40,6 +40,32 @@ h5, h1 {
 
 }
 
+.button{
+    position: absolute;
+    right: 35%;
+    top: 75%;
+    font-size: 25px;
+    color: #ffff;
+    background-color:#1ED760;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgb(220, 220, 220);
+    height: 55px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: 0.7s;
+   
+}
+
+
+.button:hover {
+    opacity: ;
+    color: #1ED760;
+    background-color: #fff;
+    
+}
+
+
 .stand-out{
     color: #db5844;
 }
