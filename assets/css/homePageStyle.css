@@ -13,15 +13,23 @@ body {
     background-color: #fef8fd;
     background-repeat: no-repeat;
 }
-
-.stand-out{
-    color: #db5844;
+section{
+    position: absolute;
+    right: 17%;
+    top: 12%;
 }
 
 h5, h1 {
     font-weight: bold;
     letter-spacing: -1.5px;
 }
+
+
+.stand-out{
+    color: #db5844;
+}
+
+
 
 .input {
     position: absolute;
