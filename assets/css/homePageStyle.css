@@ -24,6 +24,21 @@ h5, h1 {
     letter-spacing: -1.5px;
 }
 
+.top-note{
+    font-size: 40px;
+    position: absolute;
+    right: 35%;
+    top: 30%;
+   
+}
+
+.bottom-note{
+    font-size: 40px;
+    position: absolute;
+    right: 22%;
+    top: 59%;
+
+}
 
 .stand-out{
     color: #db5844;
