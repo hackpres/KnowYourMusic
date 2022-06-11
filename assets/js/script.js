@@ -10,10 +10,8 @@ function requestAuthorization() {
     let url = "https://accounts.spotify.com/authorize";
     url += "?client_id=8236072fd7dd43feae4082949df88c1e";
     url += "&response_type=code";
-    url += "&redirect_uri=" + encodeURI("https://hackpres.github.io/KnowYourMusic/html/homePage.html");
+    url += "&redirect_uri=" + encodeURI("http://127.0.0.1:5500/html/homePage.html");
     url += "&show_dialog=true";
     url += "&scope=user-read-playback-position ugc-image-upload"
     window.location.href = url;
 }
-
-
