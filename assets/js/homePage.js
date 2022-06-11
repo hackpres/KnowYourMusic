@@ -1,3 +1,6 @@
+const userSearch = document.getElementById("textInput");
+
+userSearch.addEventListener("change", requestSearchAPI());
 
 function initialize() {
     console.log("initialize")
@@ -53,6 +56,25 @@ function authorizeTokenApi(request) {
             refresh_token = data.refresh_token;
             localStorage.setItem("refresh-token", refresh_token);
         }
-        initialize();
     })
+}
+
+function requestSearchAPI() {
+    console.log("we're in!")
+    var accessToken = localStorage.getItem(access-Token); //Key will be access-Token
+    let userInput = userSearch.innerText
+
+    var myHeaders = new Headers();
+
+    myHeaders.append("Authorization", `Bearer ${accessToken}`);
+    var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+    };
+
+    fetch(`https://api.spotify.com/v1/search?q=${userInput}&type=track&limit=3&market=ES`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 }
