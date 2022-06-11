@@ -15,8 +15,8 @@ body {
 }
 section{
     position: absolute;
-    right: 17%;
-    top: 12%;
+    right: 10%;
+    top: 200px;
 }
 
 h5, h1 {
