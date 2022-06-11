@@ -1,6 +1,6 @@
 const userSearch = document.getElementById("textInput");
 
-userSearch.addEventListener("change", requestSearchAPI);
+userSearch.addEventListener("change", nextDocument);
 
 function initialize() {
     console.log("initialize")
@@ -12,7 +12,7 @@ function initialize() {
 function handleRedirect() {
     let code = retrieveCode();
     getToken(code);
-    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/homePage"); //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/homePage.html"); //removes parameters from url
 }
 
 function retrieveCode() {
@@ -29,7 +29,7 @@ function retrieveCode() {
 function getToken(code) {
     let request = "grant_type=authorization_code";
     request += "&code=" + code;
-    request += "&redirect_uri=" + encodeURI("https://hackpres.github.io/KnowYourMusic/html/homePage");
+    request += "&redirect_uri=" + encodeURI("https://hackpres.github.io/KnowYourMusic/html/homePage.html");
     request += "&client_id=8236072fd7dd43feae4082949df88c1e";
     request += "&client_secret=e1471c32cadc4f369fbb671e30827bca";
     authorizeTokenApi(request);
@@ -59,23 +59,6 @@ function authorizeTokenApi(request) {
     })
 }
 
-function requestSearchAPI() {
-    console.log("we're in!")
-    
-    var accessToken = localStorage.getItem("access-token"); //Key will be access-Token
-    let userInput = userSearch.innerText
-    console.log(userInput)
-    var myHeaders = new Headers();
-
-    myHeaders.append("Authorization", `Bearer ${accessToken}`);
-    var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-
-    fetch(`https://api.spotify.com/v1/search?q=${userInput}&type=track&limit=3&market=ES`, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+function nextDocument() {
+    window.location.assign(`https://hackpres.github.io/KnowYourMusic/html/inputReturns.html?input=${userSearch.value}`)
 }
