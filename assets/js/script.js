@@ -1,6 +1,6 @@
-const searchInput = document.getElementById("textInput");
+const authorizeBtn = document.getElementById("authorizeBtn");
 
-searchInput.addEventListener("change", requestAuthorization);
+authorizeBtn.addEventListener("click", requestAuthorization);
 
 function initialize() {
     console.log("initialize")
@@ -12,7 +12,7 @@ function initialize() {
 function handleRedirect() {
     let code = retrieveCode();
     getToken(code);
-    window.history.pushState("", "", "http://127.0.0.1:5500/"); //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/homePage"); //removes parameters from url
 }
 
 function retrieveCode() {
@@ -33,7 +33,7 @@ function requestAuthorization() {
     let url = "https://accounts.spotify.com/authorize";
     url += "?client_id=8236072fd7dd43feae4082949df88c1e";
     url += "&response_type=code";
-    url += "&redirect_uri=" + encodeURI("http://127.0.0.1:5500/");
+    url += "&redirect_uri=" + encodeURI("https://hackpres.github.io/KnowYourMusic/homePage");
     url += "&show_dialog=true";
     url += "&scope=user-read-playback-position ugc-image-upload"
     window.location.href = url;
@@ -42,7 +42,7 @@ function requestAuthorization() {
 function getToken(code) {
     let request = "grant_type=authorization_code";
     request += "&code=" + code;
-    request += "&redirect_uri=" + encodeURI("http://127.0.0.1:5500/");
+    request += "&redirect_uri=" + encodeURI("https://hackpres.github.io/KnowYourMusic/homePage");
     request += "&client_id=8236072fd7dd43feae4082949df88c1e";
     request += "&client_secret=e1471c32cadc4f369fbb671e30827bca";
     authorizeTokenApi(request);
