@@ -61,9 +61,10 @@ function authorizeTokenApi(request) {
 
 function requestSearchAPI() {
     console.log("we're in!")
+    
     var accessToken = localStorage.getItem("access-token"); //Key will be access-Token
     let userInput = userSearch.innerText
-
+    console.log(userInput)
     var myHeaders = new Headers();
 
     myHeaders.append("Authorization", `Bearer ${accessToken}`);
