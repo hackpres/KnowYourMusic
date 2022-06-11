@@ -1,6 +1,6 @@
 const userSearch = document.getElementById("textInput");
 
-userSearch.addEventListener("change", requestSearchAPI());
+userSearch.addEventListener("change", requestSearchAPI);
 
 function initialize() {
     console.log("initialize")
