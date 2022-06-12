@@ -6,7 +6,7 @@ function init() {
 
 function handleRedirect() {
     let input = retrieveInput();
-    window.history.pushState("", "", "http://127.0.0.1:5500/html/inputReturns.html"); //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/inputReturns.html"); //removes parameters from url
     requestSearchAPI(input)
 }
 
@@ -35,7 +35,7 @@ function requestSearchAPI(input) {
     redirect: 'follow'
     };
 
-    fetch(`https://api.spotify.com/v1/search?q=${input}&type=track&limit=3&market=ES`, requestOptions)
+    fetch(`https://api.spotify.com/v1/search?q=${input}&type=artist,track,album&limit=5&market=ES`, requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);
@@ -45,7 +45,7 @@ function requestSearchAPI(input) {
 }
 
 function gatherData(data) {
-
+            //Artist 1
         //  Artist Name
     let artists0 = data.tracks.items[0].artists;
     let artistName0 = []
@@ -59,7 +59,7 @@ function gatherData(data) {
     let albumImgURL0 = data.tracks.items[0].album.images[1].url
         //  Album Title (only used with track return)
     let albumTitle0 = data.tracks.items[0].album.name
-
+            //Artist 2
         //  Artist Name
     let artists1 = data.tracks.items[1].artists;
     let artistName1 = []
@@ -73,8 +73,8 @@ function gatherData(data) {
     let albumImgURL1 = data.tracks.items[1].album.images[1].url
         //  Album Title (only used with track return)
     let albumTitle1 = data.tracks.items[1].album.name
-
-    //  Artist Name
+            //Artist 3
+        //  Artist Name
     let artists2 = data.tracks.items[2].artists;
     let artistName2 = []
     artists2.forEach(position => {
@@ -87,17 +87,60 @@ function gatherData(data) {
     let albumImgURL2 = data.tracks.items[2].album.images[1].url
         //  Album Title (only used with track return)
     let albumTitle2 = data.tracks.items[2].album.name
+            //Artist 4
+        //  Artist Name
+    let artists3 = data.tracks.items[3].artists;
+    let artistName3 = []
+    artists3.forEach(position => {
+        let moniker = position.name;
+        artistName3.push(`${moniker}`)
+    });
+        //  Track Name
+    let trackName3 = data.tracks.items[3].name
+        //  Album Img
+    let albumImgURL3 = data.tracks.items[3].album.images[1].url
+        //  Album Title (only used with track return)
+    let albumTitle3 = data.tracks.items[3].album.name
+            //Artist 5
+        //  Artist Name
+    let artists4 = data.tracks.items[4].artists;
+    let artistName4 = []
+    artists4.forEach(position => {
+        let moniker = position.name;
+        artistName4.push(`${moniker}`)
+    });
+        //  Track Name
+    let trackName4 = data.tracks.items[4].name
+        //  Album Img
+    let albumImgURL4 = data.tracks.items[4].album.images[1].url
+        //  Album Title (only used with track return)
+    let albumTitle4 = data.tracks.items[4].album.name
+        
+    // let artist1 = [`[${artistName0}], ${trackName0}, ${albumImgURL0}, ${albumTitle0}`];
+    // let artist2 = [`${artistName1}, ${trackName1}, ${albumImgURL1}, ${albumTitle1}`];
+    // let artist3 = [`${artistName2}, ${trackName2}, ${albumImgURL2}, ${albumTitle2}`];
+    // let artist4 = [`${artistName3}, ${trackName3}, ${albumImgURL3}, ${albumTitle3}`];
+    // let artist5 = [`${artistName4}, ${trackName4}, ${albumImgURL4}, ${albumTitle4}`];
 
-    console.log(artistName0);
-    console.log(artistName1);
-    console.log(artistName2);
-    console.log(trackName0);
-    console.log(trackName1);
-    console.log(trackName2);
-    console.log(albumImgURL0);
-    console.log(albumImgURL1);
-    console.log(albumImgURL2);
-    console.log(albumTitle0);
-    console.log(albumTitle1);
-    console.log(albumTitle2);
+    // console.log(artistName0);
+    // console.log(artistName1);
+    // console.log(artistName2);
+    // console.log(artistName3);
+    // console.log(artistName4);
+    // console.log(trackName0);
+    // console.log(trackName1);
+    // console.log(trackName2);
+    // console.log(trackName3);
+    // console.log(trackName4);
+    // console.log(albumImgURL0);
+    // console.log(albumImgURL1);
+    // console.log(albumImgURL2);
+    // console.log(albumImgURL3);
+    // console.log(albumImgURL4);
+    // console.log(albumTitle0);
+    // console.log(albumTitle1);
+    // console.log(albumTitle2);
+    // console.log(albumTitle3);
+    // console.log(albumTitle4);
+
 }
