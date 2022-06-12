@@ -94,3 +94,47 @@ h5, h1 {
     color: white;
     opacity: 1;
 }
+
+@media only screen and (max-width: 1219px) {
+    body {
+        background-image:url("../img/KYMmobileLines.svg");
+        background-size: cover;
+        background-position: center;
+        background-attachment:fixed;
+        background-color: #fef8fd;
+        background-repeat: no-repeat;
+       
+        
+    }
+    .background {
+        background-image: url("../img/KYM_text.svg");
+        position: fixed;
+        right: 15%;
+        top: 0%;
+        background-repeat: no-repeat;
+        background-size: 650px;
+        width: 300px;
+        height: 300px;
+      }
+
+      section{
+        padding: 50px 10px;
+        position: relative;
+        right: 0;
+      }
+
+    .spodImg{
+        width: 100%;
+        padding: 50px 50px;
+    }
+    .top-note{
+        font-size: 25px;
+        
+  }
+
+    .bottom-note{
+        font-size: 25px;
+        
+    }
+   
+}
