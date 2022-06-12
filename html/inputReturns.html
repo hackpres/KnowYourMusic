@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/css/homePageStyle.css">
     <title>Know Your Music</title>
 </head>
-<body>
-    
+<body onload="init()">
+    <section class="input">
+        <div>
+            <h1> CONNECTING <span class="stand-out">YOU</span> WITH</h1>
+            <h1>YOUR FAVORITE <span class="stand-out">ARTISTS</span></h1>
+                <br>
+            <h5>CONNECTION BEGINS WITH A SEARCH.</h5>
+                <br>
+            <h5>SIMPLY TYPE IN WHATEVER INFO YOU HAVE, EVEN IF ITS</h5>
+            <h5>ONLY PARTIALL SONG LYRICS.</h5>
+            <h5>WE WILL GET YOUALL THE INFO YOU NEED.</h5>
+                <br>
+            <div>
+                <input type="search" id="textInput" class="textArea" placeholder="ARTISTNAME/LYRICS"/>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/inputReturns.js"></script>
 </body>
 </html>
