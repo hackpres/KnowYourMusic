@@ -59,22 +59,20 @@ function printArtistOptions(data) {
 function createBtnElements(array) {
         //used for...of here so that we can break the loop once 5 buttons have been appended
     for (let option of array) {
-        let artist = option.name;
+        let artist = option.id;
+        console.log(option.id)
         let container = document.createElement("button");
         container.addEventListener("click", (e) => {
             redirectToArtistPage(artist)
         });
         let nameEl = document.createElement("h3");
-        nameEl.innerText = option.name
-        let ImgEl = document.createElement("img");
+        nameEl.innerText = `artist: ${option.name}`
             //checks to see if the data returned an img, if not print our default KYMnoImgFound.svg
         if (option.images[1]) {
-            container.innerHTML = `
-            <img src="${option.images[1].url}"></img>`         
+            container.innerHTML = `<img src="${option.images[1].url}"></img>`         
         } else {
             container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
         }
-        container.appendChild(ImgEl);
         container.appendChild(nameEl);
         btnsContainer.appendChild(container);
             //breaks the loop once 5 buttons have been appended
@@ -88,14 +86,15 @@ function createBtnElements(array) {
 
 function createAlbumBtnElements(array) {
     for (let option of array) {
-        let artist = option.artists[0].name
+        let artist = option.artists[0].id
         let container = document.createElement("button");
         container.addEventListener("click", (e) => {
             console.log(e.target)
+            console.log("artist" + artist)
             redirectToArtistPage(artist)
         });
         let nameEl = document.createElement("h3");
-        nameEl.innerText = option.name
+        nameEl.innerText = `album: ${option.name}`
         let ImgEl = document.createElement("img");
         if (option.images[1]) {
             container.innerHTML = `
@@ -116,5 +115,6 @@ function createAlbumBtnElements(array) {
 }
 
 function redirectToArtistPage(artist) {
+    console.log(artist)
     window.location.assign(`https://hackpres.github.io/KnowYourMusic/html/artistPage.html?artist=${artist}`)
 }
