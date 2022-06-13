@@ -1,3 +1,4 @@
+const btnsContainer = document.getElementById("optionBtnsContainer");
 
 function init() {
     console.log("initialized")
@@ -6,7 +7,7 @@ function init() {
 
 function handleRedirect() {
     let input = retrieveInput();
-    window.history.pushState("", "", "http://127.0.0.1:5500/html/inputReturns.html"); //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/inputReturns.html"); //removes parameters from url
     requestSearchAPI(input)
 }
 
@@ -17,15 +18,11 @@ function retrieveInput() {
         const urlParams = new URLSearchParams(queryString);
         input = urlParams.get("input");
     }
-    console.log('input:', input)
     return input;
 }
 
 function requestSearchAPI(input) {
-    console.log("we're in!")
-    
-    var accessToken = localStorage.getItem("access-token"); //Key will be access-Token
-    console.log(input)
+    var accessToken = localStorage.getItem("access-token");
     var myHeaders = new Headers();
 
     myHeaders.append("Authorization", `Bearer ${accessToken}`);
@@ -35,69 +32,89 @@ function requestSearchAPI(input) {
     redirect: 'follow'
     };
 
-    fetch(`https://api.spotify.com/v1/search?q=${input}&type=track&limit=3&market=ES`, requestOptions)
+    fetch(`https://api.spotify.com/v1/search?q=${input}&type=album,artist&limit=5&market=ES`, requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);
-        gatherData(result)
+        printArtistOptions(result);
     })
     .catch(error => console.log('error', error));
 }
 
-function gatherData(data) {
+function printArtistOptions(data) {
+    let artistOptions = data.artists.items;
+    let albumOptions = data.albums.items;
+        //checks to see if artists has any contents, if not it will print buttons from album data
+    if (data.artists.items[1]) {
+        createBtnElements(artistOptions)
+            //checks to see if the artists printed 5 buttons, if not create the rest from album data
+        if (btnsContainer.childElementCount < 5) {
+                createAlbumBtnElements(albumOptions)
+        }
+    } else {
+        createAlbumBtnElements(albumOptions)
+    }
+}
 
-        //  Artist Name
-    let artists0 = data.tracks.items[0].artists;
-    let artistName0 = []
-    artists0.forEach(position => {
-        let moniker = position.name;
-        artistName0.push(`${moniker}`)
-    });
-        //  Track Name
-    let trackName0 = data.tracks.items[0].name
-        //  Album Img
-    let albumImgURL0 = data.tracks.items[0].album.images[1].url
-        //  Album Title (only used with track return)
-    let albumTitle0 = data.tracks.items[0].album.name
+function createBtnElements(array) {
+        //used for...of here so that we can break the loop once 5 buttons have been appended
+    for (let option of array) {
+        let artist = option.name;
+        let container = document.createElement("button");
+        container.addEventListener("click", (e) => {
+            redirectToArtistPage(artist)
+        });
+        let nameEl = document.createElement("h3");
+        nameEl.innerText = option.name
+        let ImgEl = document.createElement("img");
+            //checks to see if the data returned an img, if not print our default KYMnoImgFound.svg
+        if (option.images[1]) {
+            container.innerHTML = `
+            <img src="${option.images[1].url}"></img>`         
+        } else {
+            container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
+        }
+        container.appendChild(ImgEl);
+        container.appendChild(nameEl);
+        btnsContainer.appendChild(container);
+            //breaks the loop once 5 buttons have been appended
+        if (btnsContainer.childElementCount >= 5) {
+            break
+        }
 
-        //  Artist Name
-    let artists1 = data.tracks.items[1].artists;
-    let artistName1 = []
-    artists1.forEach(position => {
-        let moniker = position.name;
-        artistName1.push(`${moniker}`)
-    });
-        //  Track Name
-    let trackName1 = data.tracks.items[1].name
-        //  Album Img
-    let albumImgURL1 = data.tracks.items[1].album.images[1].url
-        //  Album Title (only used with track return)
-    let albumTitle1 = data.tracks.items[1].album.name
+        option++;
+    }
+}
 
-    //  Artist Name
-    let artists2 = data.tracks.items[2].artists;
-    let artistName2 = []
-    artists2.forEach(position => {
-        let moniker = position.name;
-        artistName2.push(`${moniker}`)
-    });
-        //  Track Name
-    let trackName2 = data.tracks.items[2].name
-        //  Album Img
-    let albumImgURL2 = data.tracks.items[2].album.images[1].url
-        //  Album Title (only used with track return)
-    let albumTitle2 = data.tracks.items[2].album.name
+function createAlbumBtnElements(array) {
+    for (let option of array) {
+        let artist = option.artists[0].name
+        let container = document.createElement("button");
+        container.addEventListener("click", (e) => {
+            console.log(e.target)
+            redirectToArtistPage(artist)
+        });
+        let nameEl = document.createElement("h3");
+        nameEl.innerText = option.name
+        let ImgEl = document.createElement("img");
+        if (option.images[1]) {
+            container.innerHTML = `
+            <img src="${option.images[1].url}"></img>`         
+        } else {
+            container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
+        }
+        container.appendChild(ImgEl);
+        container.appendChild(nameEl);
+        btnsContainer.appendChild(container);
+        console.log(btnsContainer.childElementCount)
+        if (btnsContainer.childElementCount >= 5) {
+            break
+        }
 
-    console.log(artistName0);
-    console.log(artistName1);
-    console.log(artistName2);
-    console.log(trackName0);
-    console.log(trackName1);
-    console.log(trackName2);
-    console.log(albumImgURL0);
-    console.log(albumImgURL1);
-    console.log(albumImgURL2);
-    console.log(albumTitle0);
-    console.log(albumTitle1);
-    console.log(albumTitle2);
+        option++;
+    }
+}
+
+function redirectToArtistPage(artist) {
+    window.location.assign(`https://hackpres.github.io/KnowYourMusic/html/artistPage.html?artist=${artist}`)
 }
