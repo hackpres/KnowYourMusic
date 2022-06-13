@@ -7,7 +7,7 @@ function init() {
 
 function handleRedirect() {
     let input = retrieveInput();
-    window.history.pushState("", "", "http://127.0.0.1:5500/html/inputReturns.html"); //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/inputReturns.html"); //removes parameters from url
     requestSearchAPI(input)
 }
 
@@ -116,5 +116,5 @@ function createAlbumBtnElements(array) {
 }
 
 function redirectToArtistPage(artist) {
-    window.location.assign(`http://127.0.0.1:5500/html/artistPage.html?artist=${artist}`)
+    window.location.assign(`https://hackpres.github.io/KnowYourMusic/html/artistPage.html?artist=${artist}`)
 }
