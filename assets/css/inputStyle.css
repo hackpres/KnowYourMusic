@@ -1,0 +1,109 @@
+
+* {
+    font-family: apparat-semicond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #294c5e;
+    
+}
+
+body {
+    background-image: url("../img/KYM_linesWhiteV2.svg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #fef8fd;
+    background-repeat: no-repeat;
+}
+
+.stlyedButtons{
+    width: 10% ;
+    background: rgb(213, 213, 221);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 0px #fef8fd;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+    padding: 1%;
+    margin: 3%;
+    text-transform: lowercase;
+    
+}
+
+img{
+    width: 100%;
+   
+}
+
+.stlyedButtons:hover{
+    
+    background-color: #fbfbfb;
+}   
+
+.home-button{
+   position: absolute;
+	float: right;    
+	right:0px;
+    bottom:0px;
+    transform: rotate(90deg);
+    width: 5%;
+    transition:  .3s ease;
+}
+
+.home-button:hover{
+    width: 14%;
+
+}
+
+@media only screen and (max-width: 1219px) {
+    body {
+        background-image:url("../img/KYMlinesMobileArtistPage\ .svg");
+        background-size: cover;
+        background-position: center;
+        background-attachment:fixed;
+        background-color: #fef8fd;
+        background-repeat: no-repeat;
+       
+        
+    }
+    
+    .background {
+        background-image: url("../img/KYMtextMoblieArtistPage\ .svg");
+        position: fixed;
+        right: 15%;
+        top: 0%;
+        background-repeat: no-repeat;
+        background-size: 650px;
+        width: 300px;
+        height: 300px;
+        /* border: 2px solid; */
+      }
+
+    
+
+    .stlyedButtons{
+            width: 25% ;
+            background: rgb(213, 213, 221);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            border-radius: 10px;
+            transition: background-color .3s ease;
+            padding: 1%;
+            margin: 3%;
+
+    }
+
+    img{
+            width: 100%;
+           
+    }
+
+    .home-button{
+        position: absolute;
+         float: right;    
+         right:0px;
+         bottom:0px;
+         transform: rotate(90deg);
+         width: 10%;
+         transition:  .3s ease;
+     }
+   
+}
