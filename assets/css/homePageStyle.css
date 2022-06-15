@@ -19,7 +19,7 @@ section{
     top: 200px;
 }
 
-h5, h1 {
+h1, p {
     font-weight: bold;
     letter-spacing: -1.5px;
 }
