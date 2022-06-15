@@ -1,4 +1,6 @@
 const userSearch = document.getElementById("textInput");
+const historyBtn = document.getElementById("searchHistoryBtn");
+const historyContainerEl = document.getElementById("artistHistory");
 
 userSearch.addEventListener("change", nextDocument);
 
@@ -7,6 +9,7 @@ function initialize() {
     if (window.location.search.length > 0) {
         handleRedirect();
     }
+    retrieveHistory();
 }
 
 function handleRedirect() {
@@ -33,6 +36,22 @@ function getToken(code) {
     request += "&client_id=8236072fd7dd43feae4082949df88c1e";
     request += "&client_secret=e1471c32cadc4f369fbb671e30827bca";
     authorizeTokenApi(request);
+}
+
+function retrieveHistory() {
+    let storedArtists = Object.keys(localStorage);
+    let filteredArtists = storedArtists.filter(name => name);
+    filteredArtists.forEach(savedArtist => {
+        let artistBtn = document.createElement("button");
+        artistBtn.type = "button";
+        artistBtn.classList.add("w-100", "btn");
+        artistBtn.innerText = savedArtist;
+        artistBtn.addEventListener('click', (e) => {
+            console.log("savedArtist" + savedArtist)
+            closeModal.click();
+        });
+        historyContainerEl.appendChild(artistBtn);
+    })
 }
 
 function authorizeTokenApi(request) {

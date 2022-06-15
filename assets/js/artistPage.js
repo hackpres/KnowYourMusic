@@ -72,41 +72,18 @@ function printAlbumData(id) {
 
     myHeaders.append("Authorization", `Bearer ${accessToken}`);
     var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
     };
 
-    fetch(`	https://api.spotify.com/v1/artists/${id}/albums&include_groups=album,single&limit=10`, requestOptions)
+    console.log(id)
+    fetch(`https://api.spotify.com/v1/artists/${id}/albums`, requestOptions)
     .then(response => response.json())
     .then(result => {
-        console.log(result)
-        let albumArray = result.items;
-        for (let position of albumArray) {
-            // let artist = position.artists[0].name
-            // let container = document.createElement("div");
-            // container.addEventListener("click", (e) => {
-            //     console.log(e.target)
-            //     redirectToArtistPage(artist)
-            // });
-            // let nameEl = document.createElement("h3");
-            // nameEl.innerText = position.name
-            // let ImgEl = document.createElement("img");
-            // if (position.images[1]) {
-            //     container.innerHTML = `
-            //     <img src="${position.images[1].url}"></img>`         
-            // } else {
-            //     container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
-            // }
-            // container.appendChild(ImgEl);
-            // container.appendChild(nameEl);
-            // btnsContainer.appendChild(container);
-            // console.log(btnsContainer.childElementCount)
-            // if (btnsContainer.childElementCount >= 5) {
-            //     break
-            // }
-    
-            position++;
-        }
+        console.log(result);
+        let albumsArray = result.items;
+        console.log(albumsArray)
     })
+    .catch(error => console.log('error', error));
 }
