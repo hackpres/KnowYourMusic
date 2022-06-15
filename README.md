@@ -39,3 +39,5 @@ Once they enter an artist name or album then they will be presented with the top
 
 * Project Github Page: [https://hackpres.github.io/KnowYourMusic/]
 * Project Github Repo: [https://github.com/hackpres/KnowYourMusic]
+
+<!-- not completed -->
