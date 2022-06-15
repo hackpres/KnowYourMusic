@@ -12,7 +12,8 @@ function init() {
 
 function handleRedirect() {
     let artist = retrieveInput();
-    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/artistPage.html"); //removes parameters from url
+    //removes parameters from url
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/artistPage.html");
     requestSearchAPI(artist)
 }
 
