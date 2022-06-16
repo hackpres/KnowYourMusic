@@ -1,0 +1,89 @@
+* {
+    font-family: apparat-semicond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #294C5E;
+}
+body {
+    background-image: url(“../img/KYM_linesWhiteV2.svg”);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #FEF8FD;
+    background-repeat: no-repeat;
+}
+/* Name pulled directly from Spotify will update. */
+#artistImage {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 300px;
+        height: 300px;
+        border-radius: 100px;
+        margin: 5px;
+}
+#artistInfoContainer{
+    background-color: rgb(237, 237, 238);
+    border: 1px ;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 100px;
+    line-height: 10px;
+    padding: 30px;
+    margin: 50px;
+}
+.home-button{
+    position: absolute;
+     float: right;
+     right:0px;
+     bottom:0px;
+     transform: rotate(90deg);
+     width: 5%;
+     transition:  .3s ease;
+ }
+ .home-button:hover{
+     width: 14%;
+ }
+@media only screen and (max-width: 1219px) {
+    body {
+        background-image:url(“../img/KYMmobileLines.svg”);
+        background-size: cover;
+        background-position: center;
+        background-attachment:fixed;
+        background-color: #FEF8FD;
+        background-repeat: no-repeat;
+    }
+    .background {
+        background-image: url(“../img/KYM_text.svg”);
+        position: fixed;
+        right: 15%;
+        top: 0%;
+        background-repeat: no-repeat;
+        background-size: 650px;
+        width: 300px;
+        height: 300px;
+      }
+      #artistImage {
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-size: cover;
+        border-radius: 100px;
+    }
+    #artistInfoContainer{
+        background-color: rgb(237, 237, 238);
+        border: 1px ;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 100px;
+        line-height: 10px;
+        padding: 10%;
+    }
+    .home-button{
+        position: absolute;
+         float: right;
+         right:0px;
+         bottom:0px;
+         transform: rotate(90deg);
+         width: 10%;
+         transition:  .3s ease;
+     }
+}
