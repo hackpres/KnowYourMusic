@@ -51,7 +51,7 @@ function requestSearchAPI(input) {
 function printArtistData(data) {
     let artistImgURL = data.images[1].url;
     imageContainer.innerHTML =`
-    <img src="${artistImgURL}"></img>`
+    <img class="artistImgEl" src="${artistImgURL}"></img>`
 
     let artistFollowers = data.followers.total;
     followers.innerText = `${artistFollowers}`
@@ -88,18 +88,20 @@ function printAlbumData(id) {
 function renderAlbumEl(array) {
     for (let album of array) {
         let container = document.createElement("div")
+        container.classList.add("albumInfoContainer")
         let imageEl = document.createElement("img");
+        imageEl.classList.add("albumImgEl")
         if (album.images[1]) {
             imageEl.src = `${album.images[1].url}`
         } else {
             imageEl.src = "../assets/img/KYMnoImgFound.svg"
         }
-        let nameEl = document.createElement("h2");
-        nameEl.innerText = `title:${album.name}`
+        let nameEl = document.createElement("h3");
+        nameEl.innerText = `${album.name}`
         let releaseEl = document.createElement("p");
-        releaseEl.innerText = `release date:${album.release_date}`
+        releaseEl.innerText = `${album.release_date} :Release Date`
         let tracksNumberEl = document.createElement("p"); 
-        tracksNumberEl.innerText = `total tracks:${album.total_tracks}`
+        tracksNumberEl.innerText = `${album.total_tracks} :Total Tracks`
 
         container.appendChild(imageEl)
         container.appendChild(nameEl)
