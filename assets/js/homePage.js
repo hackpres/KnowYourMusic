@@ -40,15 +40,25 @@ function getToken(code) {
 
 function retrieveHistory() {
     let storedArtists = Object.keys(localStorage);
-    let filteredArtists = storedArtists.filter(name => name);
+    console.log(storedArtists)
+    // let filteredArtists = storedArtists.filter(key => {
+    // })
+    let filteredArtists = [];
+    for (let key of storedArtists) {
+        if (key !== "access-token" && key !== "refresh-token" && key !== "client_secret" && key !== "client_id") {
+            filteredArtists.push(key)
+        }
+    }
+    console.log(filteredArtists)
     filteredArtists.forEach(savedArtist => {
         let artistBtn = document.createElement("button");
         artistBtn.type = "button";
         artistBtn.classList.add("w-100", "btn");
         artistBtn.innerText = savedArtist;
         artistBtn.addEventListener('click', (e) => {
-            console.log("savedArtist" + savedArtist)
-            closeModal.click();
+            let name = e.target.innerText
+            let artist = localStorage.getItem(name);
+            window.location.assign(`http://127.0.0.1:5500//html/artistPage.html?artist=${artist}`)
         });
         historyContainerEl.appendChild(artistBtn);
     })
