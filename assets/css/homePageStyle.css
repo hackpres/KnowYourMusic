@@ -135,7 +135,7 @@ h1, p {
         background-image: url("../img/KYM_text.svg");
         position: fixed;
         right: 15%;
-        top: 0%;
+        bottom: 70%;
         background-repeat: no-repeat;
         background-size: 650px;
         width: 300px;
@@ -144,8 +144,14 @@ h1, p {
 
     section {
         padding: 50px 10px;
-        position: relative;
+        position: fixed;
         right: 0;
+    }
+
+    .input {
+        position: absolute;
+        right: 20%;
+        top: 25%;
     }
 
     .spodImg{
