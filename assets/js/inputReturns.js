@@ -62,6 +62,7 @@ function createBtnElements(array) {
         let artist = option.id;
         let name = option.name;
         let container = document.createElement("button");
+        container.classList.add("styledButtons")
         container.addEventListener("click", (e) => {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
@@ -90,6 +91,7 @@ function createAlbumBtnElements(array) {
         let artist = option.artists[0].id;
         let name = option.artists[0].name;
         let container = document.createElement("button");
+        container.classList.add("styledButtons")
         container.addEventListener("click", (e) => {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
