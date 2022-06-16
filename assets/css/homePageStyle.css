@@ -21,16 +21,24 @@ section{
     top: 200px;
 }
 
+.spodImg{
+    width: 700px;
+    padding: 50px 50px;
+    margin: 10px;
+}
+
+
 h1, p {
     font-weight: bold;
     letter-spacing: -1.5px;
 }
 
+
 .top-note{
     font-size: 40px;
     position: absolute;
     right: 35%;
-    top: 30%;
+    top: 15%;
    
 }
 
@@ -41,7 +49,6 @@ h1, p {
     top: 59%;
 
 }
-
 .button{
     position: absolute;
     right: 35%;
@@ -135,7 +142,7 @@ h1, p {
         background-image: url("../img/KYM_text.svg");
         position: fixed;
         right: 15%;
-        top: 0%;
+        bottom: 70%;
         background-repeat: no-repeat;
         background-size: 650px;
         width: 300px;
@@ -144,8 +151,14 @@ h1, p {
 
     section {
         padding: 50px 10px;
-        position: relative;
+        position: fixed;
         right: 0;
+    }
+
+    .input {
+        position: absolute;
+        right: 20%;
+        top: 25%;
     }
 
     .spodImg{
@@ -154,7 +167,9 @@ h1, p {
     }
 
     .top-note{
-        font-size: 25px;      
+        font-size: 25px;  
+        position: absolute;
+        top: 25%;    
     }
 
     .bottom-note{
