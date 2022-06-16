@@ -4,16 +4,16 @@ const nameContainer = document.getElementById("artistNameContainer");
 const followers = document.getElementById("followers");
 const popularity = document.getElementById("popularity");
 const genre = document.getElementById("genre");
+const albumsElContainer = document.getElementById("albumsElContainer");
 
 function init() {
-    console.log("initialized")
     handleRedirect();
 }
 
 function handleRedirect() {
     let artist = retrieveInput();
     //removes parameters from url
-    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/artistPage.html");
+    window.history.pushState("", "", "http://127.0.0.1:5500/html/artistPage.html");
     requestSearchAPI(artist)
 }
 
@@ -24,7 +24,6 @@ function retrieveInput() {
         const urlParams = new URLSearchParams(queryString);
         input = urlParams.get("artist");
     }
-
     return input;
 }
 
@@ -39,7 +38,6 @@ function requestSearchAPI(input) {
     redirect: 'follow'
     };
 
-    console.log(input)
     fetch(`https://api.spotify.com/v1/artists/${input}`, requestOptions)
     .then(response => response.json())
     .then(result => {
@@ -78,13 +76,38 @@ function printAlbumData(id) {
         redirect: 'follow'
     };
 
-    console.log(id)
     fetch(`https://api.spotify.com/v1/artists/${id}/albums`, requestOptions)
     .then(response => response.json())
     .then(result => {
-        console.log(result);
         let albumsArray = result.items;
-        console.log(albumsArray)
+        renderAlbumEl(albumsArray)
     })
     .catch(error => console.log('error', error));
+}
+
+function renderAlbumEl(array) {
+    for (let album of array) {
+        let container = document.createElement("div")
+        let imageEl = document.createElement("img");
+        if (album.images[1]) {
+            imageEl.src = `${album.images[1].url}`
+        } else {
+            imageEl.src = "../assets/img/KYMnoImgFound.svg"
+        }
+        let nameEl = document.createElement("h2");
+        nameEl.innerText = `title:${album.name}`
+        let releaseEl = document.createElement("p");
+        releaseEl.innerText = `release date:${album.release_date}`
+        let tracksNumberEl = document.createElement("p"); 
+        tracksNumberEl.innerText = `total tracks:${album.total_tracks}`
+
+        container.appendChild(imageEl)
+        container.appendChild(nameEl)
+        container.appendChild(releaseEl)
+        container.appendChild(tracksNumberEl)
+        albumsElContainer.appendChild(container)
+        if (albumsElContainer.childElementCount >= 10) {
+            break
+        }   
+    }
 }
