@@ -17,22 +17,23 @@ body {
 }
 
 .styledButtons{
-    width: 10% ;
+    width: 200px;
+    height: 290px;
     background: rgb(213, 213, 221);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border: 0px #fef8fd;
     border-radius: 10px;
     transition: background-color .3s ease;
     padding: 1%;
-    margin: 3%;
-    text-transform: lowercase;
-    
+    margin: 3px;
+    text-transform: uppercase;
+    position: 
 }
 
 img{
     width: 100%;
    
 }
+
 
 .styledButtons:hover{
     
@@ -79,16 +80,17 @@ img{
       }
 
     
-
-    .stlyedButtons{
-            width: 25% ;
+    .styledButtons{
+            width: 200px;
+            height: 290px;
             background: rgb(213, 213, 221);
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
             border-radius: 10px;
             transition: background-color .3s ease;
             padding: 1%;
             margin: 3%;
-
+            text-transform: uppercase;
+            
     }
 
     img{
