@@ -99,8 +99,10 @@ function renderAlbumEl(array) {
         let nameEl = document.createElement("h3");
         nameEl.innerText = `${album.name}`
         let releaseEl = document.createElement("p");
+        releaseEl.classList.add("infoPTags");
         releaseEl.innerText = `${album.release_date} :Release Date`
-        let tracksNumberEl = document.createElement("p"); 
+        let tracksNumberEl = document.createElement("p");
+        tracksNumberEl.classList.add("infoPTags")
         tracksNumberEl.innerText = `${album.total_tracks} :Total Tracks`
 
         container.appendChild(imageEl)
