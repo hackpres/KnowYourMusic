@@ -1,14 +1,14 @@
 const btnsContainer = document.getElementById("optionBtnsContainer");
 
 function init() {
-    console.log("initialized")
+    console.log("initialized");
     handleRedirect();
 }
 
 function handleRedirect() {
     let input = retrieveInput();
     window.history.pushState("", "", "http://127.0.0.1:5500/html/inputReturns.html"); //removes parameters from url
-    requestSearchAPI(input)
+    requestSearchAPI(input);
 }
 
 function retrieveInput() {
@@ -46,13 +46,13 @@ function printArtistOptions(data) {
     let albumOptions = data.albums.items;
         //checks to see if artists has any contents, if not it will print buttons from album data
     if (data.artists.items[1]) {
-        createBtnElements(artistOptions)
+        createBtnElements(artistOptions);
             //checks to see if the artists printed 5 buttons, if not create the rest from album data
         if (btnsContainer.childElementCount < 5) {
-                createAlbumBtnElements(albumOptions)
+                createAlbumBtnElements(albumOptions);
         }
     } else {
-        createAlbumBtnElements(albumOptions)
+        createAlbumBtnElements(albumOptions);
     }
 }
 
@@ -62,13 +62,13 @@ function createBtnElements(array) {
         let artist = option.id;
         let name = option.name;
         let container = document.createElement("button");
-        container.classList.add("styledButtons")
+        container.classList.add("styledButtons");
         container.addEventListener("click", (e) => {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
         });
         let nameEl = document.createElement("h3");
-        nameEl.innerText = `artist: ${option.name}`
+        nameEl.innerText = `artist: ${option.name}`;
             //checks to see if the data returned an img, if not print our default KYMnoImgFound.svg
         if (option.images[1]) {
             container.innerHTML = `<img src="${option.images[1].url}"></img>`;      
@@ -91,7 +91,7 @@ function createAlbumBtnElements(array) {
         let artist = option.artists[0].id;
         let name = option.artists[0].name;
         let container = document.createElement("button");
-        container.classList.add("styledButtons")
+        container.classList.add("styledButtons");
         container.addEventListener("click", (e) => {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
@@ -100,17 +100,16 @@ function createAlbumBtnElements(array) {
         nameEl.innerText = `album: ${option.name}`;
         let ImgEl = document.createElement("img");
         if (option.images[1]) {
-            container.innerHTML = `
-            <img src="${option.images[1].url}"></img>`         
+            container.innerHTML = `<img src="${option.images[1].url}"></img>`;        
         } else {
             container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
         }
         container.appendChild(ImgEl);
         container.appendChild(nameEl);
         btnsContainer.appendChild(container);
-        console.log(btnsContainer.childElementCount)
+        console.log(btnsContainer.childElementCount);
         if (btnsContainer.childElementCount >= 5) {
-            break
+            break;
         }
 
         option++;
@@ -118,6 +117,6 @@ function createAlbumBtnElements(array) {
 }
 
 function redirectToArtistPage(artist) {
-    console.log(artist)
-    window.location.assign(`http://127.0.0.1:5500/html/artistPage.html?artist=${artist}`)
+    console.log(artist);
+    window.location.assign(`http://127.0.0.1:5500/html/artistPage.html?artist=${artist}`);
 }

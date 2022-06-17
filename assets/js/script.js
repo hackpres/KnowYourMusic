@@ -12,6 +12,6 @@ function requestAuthorization() {
     url += "&response_type=code";
     url += "&redirect_uri=" + encodeURI("http://127.0.0.1:5500/html/homePage.html");
     url += "&show_dialog=true";
-    url += "&scope=user-read-playback-position ugc-image-upload"
+    url += "&scope=user-read-playback-position ugc-image-upload";
     window.location.href = url;
 }
