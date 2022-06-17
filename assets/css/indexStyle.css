@@ -1,0 +1,155 @@
+* {
+    font-family: apparat-semicond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #294c5e;
+    
+}
+
+body {
+    background-image: url("../img/KYMmobileLines.svg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #fef8fd;
+    background-repeat: no-repeat;
+}
+
+#KYMtextContainer {
+    display: flex;
+}
+
+#KYMtext {
+    width: 60vw;
+    margin: 7rem auto 0;
+}
+
+#spotifySection {
+display: flex;
+justify-content: center;
+margin: 2rem auto
+}
+
+.spotifyImg {
+    width: 70vw;
+    margin-bottom: 2rem;
+}
+
+#note {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.top-note{
+    font-size: 2rem;
+    justify-self: center;
+    margin-bottom: 0;
+}
+
+#authorizeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button{
+    margin-left: auto;
+    font-size: 24px;
+    color: #ffff;
+    background-color:#1ED760;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgb(220, 220, 220);
+    height: 55px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: 0.7s;
+}
+
+.button:hover {
+    color: #1ED760;
+    background-color: #fff;
+    
+}
+
+.modalBtn{
+    margin-right: auto;
+    font-size: 12px;
+    color: #ffff;
+    background-color:#1ED760;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid rgb(220, 220, 220);
+    height: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: 0.7s;
+    opacity: .4;
+}
+
+.modalBtn:hover {
+    color: #fef8fd;
+    background-color: #294c5e;
+}
+
+@media (min-width: 430px) and (max-width: 800px) {
+    .top-note {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 3rem;
+    }
+    .spotifyImg {
+        margin-bottom: 2.5rem;
+    }
+    .button {
+        margin-right: 1rem;
+    }
+    .modalBtn {
+        font-size: 18px;
+        height: 36px;
+    }
+}
+
+@media (min-width: 800px) {
+    body {
+        background-image: url("../img/KYM_linesWhiteV2.svg");
+        display: flex;
+    }
+    #KYMtextContainer {
+        margin: 26vh 0 0 6vw;
+    }
+    #KYMtext {
+        width: min(38vw, 50rem);
+    }
+    #main {
+        margin-top: 28vh;
+        margin-left: 9vw;
+    }
+    #spotifySection {
+    margin: 2rem auto;
+    }
+    .spotifyImg {
+        width: min(35vw, 48rem);
+        margin-bottom: 2rem;
+    }
+    #note {
+        text-align: center;
+        justify-content: center;
+        margin: 6rem auto 0;
+    }
+    .top-note{
+        /* font-size: 2rem; */
+        font-size: clamp(2rem, 4vw, 4.5rem);
+        font-weight: 900;
+        justify-self: center;
+        margin-bottom: 0;
+    }
+    .button {
+        margin-right: 1rem;
+    }
+    .modalBtn {
+        font-size: 18px;
+        height: 36px;
+    }
+}
