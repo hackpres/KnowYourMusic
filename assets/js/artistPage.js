@@ -14,7 +14,7 @@ function handleRedirect() {
     let artist = retrieveInput();
     //removes parameters from url
     window.history.pushState("", "", "http://127.0.0.1:5500/html/artistPage.html");
-    requestSearchAPI(artist)
+    requestSearchAPI(artist);
 }
 
 function retrieveInput() {
@@ -50,19 +50,17 @@ function requestSearchAPI(input) {
 
 function printArtistData(data) {
     let artistImgURL = data.images[1].url;
-    imageContainer.innerHTML =`
-    <img class="artistImgEl" src="${artistImgURL}"></img>`
+    imageContainer.innerHTML =`<img class="artistImgEl" src="${artistImgURL}"></img>`;
 
     let artistFollowers = data.followers.total;
-    followers.innerText = `${artistFollowers}`
+    followers.innerText = `${artistFollowers}`;
     let artistPopularity = data.popularity;
-    popularity.innerText = `${artistPopularity}`
+    popularity.innerText = `${artistPopularity}`;
     let artistGenre = data.genres[0];
-    genre.innerText = `${artistGenre}`
+    genre.innerText = `${artistGenre}`;
 
     let artistName = data.name;
-    nameContainer.innerHTML = `
-    <h1>${artistName}`;
+    nameContainer.innerHTML = `<h1>${artistName}`;
 }
 
 function printAlbumData(id) {
@@ -80,38 +78,38 @@ function printAlbumData(id) {
     .then(response => response.json())
     .then(result => {
         let albumsArray = result.items;
-        renderAlbumEl(albumsArray)
+        renderAlbumEl(albumsArray);
     })
     .catch(error => console.log('error', error));
 }
 
 function renderAlbumEl(array) {
     for (let album of array) {
-        let container = document.createElement("div")
-        container.classList.add("albumInfoContainer")
+        let container = document.createElement("div");
+        container.classList.add("albumInfoContainer");
         let imageEl = document.createElement("img");
-        imageEl.classList.add("albumImgEl")
+        imageEl.classList.add("albumImgEl");
         if (album.images[1]) {
-            imageEl.src = `${album.images[1].url}`
+            imageEl.src = `${album.images[1].url}`;
         } else {
-            imageEl.src = "../assets/img/KYMnoImgFound.svg"
+            imageEl.src = "../assets/img/KYMnoImgFound.svg";
         }
         let nameEl = document.createElement("h3");
-        nameEl.innerText = `${album.name}`
+        nameEl.innerText = `${album.name}`;
         let releaseEl = document.createElement("p");
         releaseEl.classList.add("infoPTags");
-        releaseEl.innerText = `${album.release_date} :Release Date`
+        releaseEl.innerText = `${album.release_date} :Release Date`;
         let tracksNumberEl = document.createElement("p");
-        tracksNumberEl.classList.add("infoPTags")
-        tracksNumberEl.innerText = `${album.total_tracks} :Total Tracks`
+        tracksNumberEl.classList.add("infoPTags");
+        tracksNumberEl.innerText = `${album.total_tracks} :Total Tracks`;
 
-        container.appendChild(imageEl)
-        container.appendChild(nameEl)
-        container.appendChild(releaseEl)
-        container.appendChild(tracksNumberEl)
-        albumsElContainer.appendChild(container)
+        container.appendChild(imageEl);
+        container.appendChild(nameEl);
+        container.appendChild(releaseEl);
+        container.appendChild(tracksNumberEl);
+        albumsElContainer.appendChild(container);
         if (albumsElContainer.childElementCount >= 10) {
-            break
+            break;
         }   
     }
 }

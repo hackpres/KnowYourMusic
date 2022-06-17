@@ -5,7 +5,7 @@ const historyContainerEl = document.getElementById("artistHistory");
 userSearch.addEventListener("change", nextDocument);
 
 function initialize() {
-    console.log("initialize")
+    console.log("initialize");
     if (window.location.search.length > 0) {
         handleRedirect();
     }
@@ -25,7 +25,7 @@ function retrieveCode() {
         const urlParams = new URLSearchParams(queryString);
         code = urlParams.get("code");
     }
-    console.log('code:', code)
+    console.log('code:', code);
     return code;
 }
 
@@ -41,31 +41,29 @@ function getToken(code) {
 function retrieveHistory() {
     let storedArtists = Object.keys(localStorage);
     console.log(storedArtists)
-    // let filteredArtists = storedArtists.filter(key => {
-    // })
     let filteredArtists = [];
     for (let key of storedArtists) {
         if (key !== "access-token" && key !== "refresh-token" && key !== "client_secret" && key !== "client_id") {
-            filteredArtists.push(key)
+            filteredArtists.push(key);
         }
     }
-    console.log(filteredArtists)
+    console.log(filteredArtists);
     filteredArtists.forEach(savedArtist => {
         let artistBtn = document.createElement("button");
         artistBtn.type = "button";
         artistBtn.classList.add("w-100", "btn");
         artistBtn.innerText = savedArtist;
         artistBtn.addEventListener('click', (e) => {
-            let name = e.target.innerText
+            let name = e.target.innerText;
             let artist = localStorage.getItem(name);
-            window.location.assign(`http://127.0.0.1:5500//html/artistPage.html?artist=${artist}`)
+            window.location.assign(`http://127.0.0.1:5500//html/artistPage.html?artist=${artist}`);
         });
         historyContainerEl.appendChild(artistBtn);
     })
 }
 
 function authorizeTokenApi(request) {
-    console.log('request', request)
+    console.log('request', request);
     fetch(`https://accounts.spotify.com/api/token`, {
         method: "POST",
         headers: {
@@ -89,5 +87,5 @@ function authorizeTokenApi(request) {
 }
 
 function nextDocument() {
-    window.location.assign(`http://127.0.0.1:5500/html/inputReturns.html?input=${userSearch.value}`)
+    window.location.assign(`http://127.0.0.1:5500/html/inputReturns.html?input=${userSearch.value}`);
 }

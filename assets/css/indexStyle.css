@@ -5,8 +5,6 @@
     color: #294c5e;
     
 }
-html {
-}
 
 body {
     background-image: url("../img/KYMmobileLines.svg");
@@ -29,7 +27,7 @@ body {
 #spotifySection {
 display: flex;
 justify-content: center;
-margin: 2rem auto
+margin: 2rem auto;
 }
 
 .spotifyImg {
@@ -141,7 +139,6 @@ margin: 2rem auto
         margin: 6rem auto 0;
     }
     .top-note{
-        /* font-size: 2rem; */
         font-size: clamp(2rem, 4vw, 4.5rem);
         font-weight: 900;
         justify-self: center;
