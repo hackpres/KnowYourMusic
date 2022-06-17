@@ -30,7 +30,7 @@ section{
 
 h1, p {
     font-weight: bold;
-    letter-spacing: -1.5px;
+    letter-spacing: -0.5px;
 }
 
 
@@ -120,7 +120,7 @@ h1, p {
 
 .customHistory-btn {
     background-color: #db5844;
-    opacity: .5;
+    opacity: .7;
     color: #fef8fd;
     width: 100%;
     border-radius: 6px;
@@ -142,7 +142,7 @@ h1, p {
         background-image: url("../img/KYM_text.svg");
         position: fixed;
         right: 15%;
-        bottom: 70%;
+        bottom: 73%;
         background-repeat: no-repeat;
         background-size: 650px;
         width: 300px;
