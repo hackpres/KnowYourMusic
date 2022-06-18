@@ -52,7 +52,7 @@ Once they enter an artist name or album then they will be presented with the top
 
 
 <!-- artistPage.html artistPage.js -->
-When they select the artist of their choice, then they are presented with the top 10 songs from the API results. 
+When they select the artist of their choice, then they are presented with the top 10 albums from the API results. 
 
 ![Screenshot of ArtistPage.html page](./assets/img/KYM_ArtistPage.png?raw=true "Artist Page")
 ![Screenshot of ArtistPage.html page](./assets/img/artistPageInitCode.png?raw=true "Artist Page init js code")
