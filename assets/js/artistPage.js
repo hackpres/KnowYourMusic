@@ -62,7 +62,7 @@ function printArtistData(data) {
     genre.innerText = `${artistGenre}`;
 
     let artistName = data.name;
-    nameContainer.innerHTML = `<h1>${artistName}`;
+    nameContainer.innerHTML = `<h1>${artistName}</h1>`;
 }
 
 function printAlbumData(id) {
