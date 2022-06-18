@@ -27,19 +27,19 @@ This is the page the user enters their Spotify credentials, then once confirmed 
 ![Screenshot of spotify page](./assets/img/KYM_Spotify.png "Spotify authorization page")
 
 <!-- homePage.html homePage.js -->
-Once user as entered their Spotify credentials they will be redirected to this page (homePage.html) where they can enter artist name or album
+Once user as entered their Spotify credentials they will be redirected to this page (homePage.html) where they can enter artist name or album.
 
 ![Screenshot of homePage.html](./assets/img/KYM_HomePage.png?raw=true "Home page")
 
 <!-- inputReturns.html inputReturns.js -->
 Once they enter an artist name or album then they will be presented with the top 5 API artists results on this page, which they can select the artist of their choice.
 
-![Screenshot of inputReturns.html page](./assets/img/KYM_InputReturnPage.png?raw=true "Input return page")
+![Screenshot of inputReturns.html page](./assets/img/KYM_InputReturns_1.png?raw=true "First of three Input return page")
+![Screenshot of inputReturns.html page](./assets/img/KYM_InputReturns_2.png?raw=true "Second of three Input return page")
+![Screenshot of inputReturns.html page](./assets/img/KYM_InputReturns_3.png?raw=true "Third of three Input return page")
 
 <!-- artistPage.html artistPage.js -->
 When they select the artist of their choice, then they are presented with the top 10 songs from the API results. 
 
 * Project Github Page: [https://hackpres.github.io/KnowYourMusic/]
 * Project Github Repo: [https://github.com/hackpres/KnowYourMusic]
-
-<!-- not completed -->
