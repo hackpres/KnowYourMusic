@@ -24,7 +24,7 @@ This is our index home page where the user will be asked for authorization to li
 <!-- Spotify authorization page -->
 This is the page the user enters their Spotify credentials, then once confirmed will be redirected to the homePage.html
 
-![Screenshot of spotify page](./assets/img/KYM_Spotify.png "Spotify authorization page")
+![Screenshot of spotify page](./assets/img/KYM_Spotify.png?raw=true "Spotify authorization page")
 
 <!-- homePage.html homePage.js -->
 Once user as entered their Spotify credentials they will be redirected to this page (homePage.html) where they can enter artist name or album.
@@ -40,6 +40,11 @@ Once they enter an artist name or album then they will be presented with the top
 
 <!-- artistPage.html artistPage.js -->
 When they select the artist of their choice, then they are presented with the top 10 songs from the API results. 
+
+![Screenshot of ArtistPage.html page](./assets/img/KYM_ArtistPage.png?raw=true "Artist Page")
+![Screenshot of ArtistPage.html page](./assets/img/KYM_ArtistPage_1.png?raw=true "First Artist Page in js code")
+![Screenshot of ArtistPage.html page](./assets/img/KYM_ArtistPage_2.png?raw=true "Second Artist Page in js code")
+
 
 * Project Github Page: [https://hackpres.github.io/KnowYourMusic/]
 * Project Github Repo: [https://github.com/hackpres/KnowYourMusic]
