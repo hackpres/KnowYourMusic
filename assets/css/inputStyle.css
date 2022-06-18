@@ -71,6 +71,12 @@ img{
 
 }
 
+@media (max-width: 430px) {
+    .home-button {
+        transform: rotate(90deg);
+    }
+}
+
 @media (min-width: 430px) and (max-width: 1000px) {
     h1 {
         font-size: 3.25rem;
