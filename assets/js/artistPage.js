@@ -15,7 +15,7 @@ function init() {
 function handleRedirect() {
     let artist = retrieveInput();
     //removes parameters from url
-    window.history.pushState("", "", "http://127.0.0.1:5500/html/artistPage.html");
+    window.history.pushState("", "", "https://hackpres.github.io/KnowYourMusic/html/artistPage.html");
     requestSearchAPI(artist);
 }
 
