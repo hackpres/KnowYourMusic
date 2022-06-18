@@ -7,8 +7,27 @@
     
 }
 
+h1 {
+    text-align: start;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+h3, p {
+    text-align: end;
+    font-size: 1.25rem;
+    margin-right: .25rem;
+}
+
+h4 {
+    text-align: end;
+    font-size: 1.25rem;
+    width: 90vw;
+    margin-bottom: .25rem;
+}
+
 body {
-    background-image: url("../img/KYM_linesWhiteV2.svg");
+    background-image: url("../img/KYMmobileLines.svg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -17,9 +36,9 @@ body {
 }
 
 .styledButtons{
-    width: 200px;
-    height: 290px;
-    background: rgb(213, 213, 221);
+    display: flex;
+    width: 90vw;
+    background: rgba(237, 237, 238, 0.488);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 10px;
     transition: background-color .3s ease;
@@ -29,24 +48,22 @@ body {
 }
 
 img{
-    width: 100%;
-   
+    width: 50vw;
+    border-radius: .25rem;
+    margin: auto .75rem;
+    align-self: flex-start;
 }
 
-
 .styledButtons:hover{
-    
     background-color: #fbfbfb;
-}   
+}
 
 .home-button{
-   position: absolute;
-	float: right;    
-	right:0px;
-    bottom:0px;
+    display: flex;
+    margin: 0 3rem 1rem auto;
     transform: rotate(90deg);
-    width: 5%;
-    transition:  .3s ease;
+    width: 12%;
+    transition: .3s ease;
 }
 
 .home-button:hover{
@@ -54,57 +71,67 @@ img{
 
 }
 
-@media only screen and (max-width: 1219px) {
+@media (min-width: 430px) and (max-width: 1000px) {
+    h1 {
+        font-size: 3.25rem;
+        margin-left: 2rem;
+        margin-top: 3rem;
+    }
+    
+    h3, p {
+        text-align: end;
+        font-size: 1.75rem;
+        margin-right: .15rem;
+    }
+    
+    h4 {
+        text-align: end;
+        font-size: 2rem;
+        width: 90vw;
+        margin-bottom: .25rem;
+    }
+
     body {
-        background-image:url("../img/KYMlinesMobileArtistPage\ .svg");
-        background-size: cover;
-        background-position: center;
-        background-attachment:fixed;
-        background-color: #fef8fd;
-        background-repeat: no-repeat;
-       
-        
+        background-image: url("../img/KYM_linesWhiteV2.svg");
     }
     
-    .background {
-        background-image: url("../img/KYMtextMoblieArtistPage\ .svg");
-        position: fixed;
-        right: 15%;
-        top: 0%;
-        background-repeat: no-repeat;
-        background-size: 650px;
-        width: 300px;
-        height: 300px;
-        /* border: 2px solid; */
-      }
-
-    
-    .styledButtons{
-            width: 200px;
-            height: 290px;
-            background: rgb(213, 213, 221);
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            border-radius: 10px;
-            transition: background-color .3s ease;
-            padding: 1%;
-            margin: 3%;
-            text-transform: uppercase;
-            
-    }
-
     img{
-            width: 100%;
-           
+        width: 40vw;
     }
 
     .home-button{
-        position: absolute;
-         float: right;    
-         right:0px;
-         bottom:0px;
-         transform: rotate(90deg);
-         width: 10%;
-         transition:  .3s ease;
-     }
-   
+        margin: 0 5rem 1rem auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        font-size: 4rem;
+        margin-left: 2rem;
+        margin-top: 6rem;
+    }
+    
+    h3, p {
+        font-size: 2.5rem;
+        margin-right: .5rem;
+    }
+    
+    h4 {
+        text-align: end;
+        font-size: 2.5rem;
+        margin-bottom: .25rem;
+    }
+    
+    body {
+        background-image: url("../img/KYM_linesWhiteV2.svg");
+    }
+    
+    img{
+        max-width: 28vw;
+    }
+
+    .home-button{
+        max-width: 8vw;
+        margin: 0 12rem 1rem auto;
+    }
 }

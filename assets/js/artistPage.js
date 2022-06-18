@@ -6,6 +6,8 @@ const popularity = document.getElementById("popularity");
 const genre = document.getElementById("genre");
 const albumsElContainer = document.getElementById("albumsElContainer");
 
+
+
 function init() {
     handleRedirect();
 }
