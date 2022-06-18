@@ -67,15 +67,20 @@ function createBtnElements(array) {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
         });
+        let textContainer = document.createElement("div");
+        let artistTag = document.createElement("p");
+        artistTag.innerText = "ARTIST:"
         let nameEl = document.createElement("h3");
-        nameEl.innerText = `artist: ${option.name}`;
+        nameEl.innerText = `${option.name}`;
             //checks to see if the data returned an img, if not print our default KYMnoImgFound.svg
         if (option.images[1]) {
             container.innerHTML = `<img src="${option.images[1].url}"></img>`;      
         } else {
             container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
         }
-        container.appendChild(nameEl);
+        textContainer.appendChild(artistTag);
+        textContainer.appendChild(nameEl);
+        container.appendChild(textContainer);
         btnsContainer.appendChild(container);
             //breaks the loop once 5 buttons have been appended
         if (btnsContainer.childElementCount >= 5) {
@@ -96,16 +101,19 @@ function createAlbumBtnElements(array) {
             localStorage.setItem(name, artist);
             redirectToArtistPage(artist);
         });
+        let textContainer = document.createElement("div");
+        let artistTag = document.createElement("p");
+        artistTag.innerText = "ARTIST:"
         let nameEl = document.createElement("h3");
         nameEl.innerText = `album: ${option.name}`;
-        let ImgEl = document.createElement("img");
         if (option.images[1]) {
             container.innerHTML = `<img src="${option.images[1].url}"></img>`;        
         } else {
             container.innerHTML = `<img src="../assets/img/KYMnoImgFound.svg"></img>`;
         }
-        container.appendChild(ImgEl);
-        container.appendChild(nameEl);
+        textContainer.appendChild(artistTag);
+        textContainer.appendChild(nameEl);
+        container.appendChild(textContainer);
         btnsContainer.appendChild(container);
         console.log(btnsContainer.childElementCount);
         if (btnsContainer.childElementCount >= 5) {
